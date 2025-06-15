@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Input Types Form</title>
+    <style>
+        body {
+            background: #f4f6fb;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .form-container {
+            background: #fff;
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 32px 28px 24px 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        h2 {
+            text-align: center;
+            color: #2d3a4b;
+            margin-bottom: 28px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #34495e;
+            font-weight: 500;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="number"],
+        input[type="search"], input[type="tel"], input[type="url"], input[type="color"],
+        input[type="date"], input[type="time"], input[type="week"], input[type="month"],
+        input[type="datetime-local"], input[type="file"], input[type="range"],
+        select, textarea {
+            width: 100%;
+            padding: 8px 10px;
+            margin-bottom: 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            font-size: 1rem;
+            background: #f9fafb;
+            transition: border 0.2s;
+        }
+        input[type="color"] {
+            padding: 2px 4px;
+            height: 36px;
+        }
+        input[type="range"] {
+            width: 90%;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #4f8cff;
+            outline: none;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .inline-group {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+        .inline-group label {
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+        button {
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background 0.2s;
+        }
+        button[type="reset"] {
+            background: #e0e4ea;
+            color: #2d3a4b;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        button[type="reset"]:hover {
+            background: #cfd8e3;
+        }
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 18px 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form with All Input Types</h2>
+        <form action="./index.php" method="post">
+            <!-- Text Inputs -->
+            <div class="form-group">
+                <label>name</label>
+                <input type="text" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="password">
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email">
+            </div>
+            <div class="form-group">
+                <label>Number:</label>
+                <input type="number" name="number">
+            </div>
+            <div class="form-group">
+                <label>Search:</label>
+                <input type="search" name="search">
+            </div>
+            <div class="form-group">
+                <label>Tel:</label>
+                <input type="tel" name="tel">
+            </div>
+            <div class="form-group">
+                <label>URL:</label>
+                <input type="url" name="url">
+            </div>
+            <div class="form-group">
+                <label>Color:</label>
+                <input type="color" name="color">
+            </div>
+            <div class="form-group">
+                <label>Date:</label>
+                <input type="date" name="date">
+            </div>
+            <div class="form-group">
+                <label>Time:</label>
+                <input type="time" name="time">
+            </div>
+            <div class="form-group">
+                <label>Week:</label>
+                <input type="week" name="week">
+            </div>
+            <div class="form-group">
+                <label>Month:</label>
+                <input type="month" name="month">
+            </div>
+            <div class="form-group">
+                <label>Datetime-local:</label>
+                <input type="datetime-local" name="datetime">
+            </div>
+            <!-- Radio Buttons -->
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="inline-group">
+                    <label><input type="radio" name="gender" value="male"> Male</label>
+                    <label><input type="radio" name="gender" value="female"> Female</label>
+                </div>
+            </div>
+            <!-- Checkboxes -->
+            <div class="form-group">
+                <label>Hobbies:</label>
+                <div class="inline-group">
+                    <label><input type="checkbox" name="hobby[]" value="reading"> Reading</label>
+                    <label><input type="checkbox" name="hobby[]" value="traveling"> Traveling</label>
+                    <label><input type="checkbox" name="hobby[]" value="coding"> Coding</label>
+                </div>
+            </div>
+            <!-- Select Dropdown -->
+            <div class="form-group">
+                <label>Country:</label>
+                <select name="country">
+                    <option value="">--Select--</option>
+                    <option value="india">India</option>
+                    <option value="usa">USA</option>
+                    <option value="uk">UK</option>
+                </select>
+            </div>
+            <!-- Multiple Select -->
+            <div class="form-group">
+                <label>Languages Known:</label>
+                <select name="languages[]" multiple>
+                    <option value="english">English</option>
+                    <option value="hindi">Hindi</option>
+                    <option value="spanish">Spanish</option>
+                </select>
+            </div>
+            <!-- File Upload -->
+            <div class="form-group">
+                <label>Upload File:</label>
+                <input type="file" name="file">
+            </div>
+            <!-- Range -->
+            <div class="form-group">
+                <label>Experience (Years):</label>
+                <input type="range" name="experience" min="0" max="10">
+            </div>
+            <!-- Hidden Input -->
+            <input type="hidden" name="user_id" value="12345">
+            <!-- Textarea -->
+            <div class="form-group">
+                <label>Comments:</label>
+                <textarea name="comments" rows="4" cols="30"></textarea>
+            </div>
+            <!-- Submit Buttons -->
+            <button name="button" value="submit">Submit</button>
+            <button name="button" value="reset" type="reset">Reset</button>
+        </form>
+    </div>
+</body>
+</html>
